@@ -1,9 +1,6 @@
 package ru.rgs.dicttransformatorspringbootstarter.dto;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 /**
  * ДТО "Вид документа", соответствующий справочнику 4.1.9 Классификатор видов документов, удостоверяющих личность

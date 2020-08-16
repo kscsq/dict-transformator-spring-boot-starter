@@ -16,13 +16,17 @@ public class TransformationRestController {
     private TransformationService service;
 
     @PostMapping(value = "/")
-    public String transform(@RequestHeader("DictionaryCode") String dictCode) throws Exception {
+    public String transform(@RequestHeader("DictionaryCode") String dictCode,
+                            @RequestHeader("MapField") String mapField,
+                            @RequestBody String remapFields) {
         log.info("Dictionary code provided is: " + dictCode);
+        log.info("MapField provided is: " + mapField);
+        log.info("RemapFields provided is: " + remapFields);
         switch (dictCode) {
             case "REF_4_1_9":
-                return service.requestREF_4_1_9().toString();
+                return service.requestREF_4_1_9(mapField, remapFields);
             case "REF_5_1_18":
-                return service.requestREF_5_1_18().toString();
+                return service.requestREF_5_1_18(mapField, remapFields);
             default:
                 return "";
         }
